@@ -5,18 +5,19 @@
 #include <stdbool.h>
 #include <stddef.h>
 
-typedef uint8_t  u8;
+typedef uint8_t u8;
 typedef uint16_t u16;
 typedef uint32_t u32;
 
-typedef int8_t  s8;
+typedef int8_t s8;
 typedef int16_t s16;
 typedef int32_t s32;
 
-struct test_inst {
+struct test_inst
+{
     bool enabled;
 
-    char *mnem;
+    const char *mnem;
     u8 opcode;
     bool is_cb_prefix;
     int imm_size;
@@ -31,22 +32,26 @@ struct test_inst {
     bool test_F, test_BC, test_DE, test_HL, test_SP, test_IME;
 };
 
-
 #define MEM_ACCESS_READ 0
 #define MEM_ACCESS_WRITE 1
 
-struct mem_access {
+struct mem_access
+{
     int type;
     u16 addr;
     u8 val;
 };
 
-struct state {
-    union {
-        struct {
+struct state
+{
+    union
+    {
+        struct
+        {
             u16 AF, BC, DE, HL;
         } reg16;
-        struct {
+        struct
+        {
             u8 F, A, C, B, E, D, L, H;
         } reg8;
     };
