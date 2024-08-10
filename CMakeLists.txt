@@ -13,4 +13,4 @@ set(GBIT_SOURCES
 add_library(${PROJECT_NAME} ${GBIT_SOURCES})
 
 # Add external lib include
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/)
+target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
